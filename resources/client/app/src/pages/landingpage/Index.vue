@@ -1,7 +1,12 @@
 <template>
     <div class='container' style="margin: 70px auto">
         <Input v-on:addTodo="createTodo" />
-        <List v-bind:datas="lists" />
+        <List
+            v-bind:datas="lists"
+            v-on:deleteTodo="destroyTodo"
+            v-on:saveSingleData="updateTodo"
+            v-on:dismiss="dismissModal"
+        />
     </div>
 </template>
 <script>
@@ -20,13 +25,34 @@ export default {
         getTodo(){
             axios.get('/api/app/index')
             .then(response=>{
-                console.log(response.data.data)
                 this.lists = response.data.data
             })
         },
         createTodo(data){
             axios.post('/api/app/create', data)
             .then(response =>{
+                this.getTodo()
+            })
+        },
+        updateTodo(data){
+            axios.put('/api/app/update', data)
+            .then(response=>{
+                this.getTodo()
+            })
+        },
+        dismissModal(data){
+            console.log(data)
+            if(data.dismiss === true){
+                this.getTodo()
+            }
+        },
+        destroyTodo(data){
+            axios({
+                url :'/api/app/destroy',
+                method : 'DELETE', 
+                data
+            })
+            .then(response=>{
                 this.getTodo()
             })
         }

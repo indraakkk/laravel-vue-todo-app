@@ -1,17 +1,14 @@
 <template>
-    <div class="container mb-3">
-        <div class="row">
-            <div class="col-9">
-                <input
-                    v-model="task" 
-                    type="task"
-                    class="form-control"
-                    placeholder="Add new task"
-                >
-            </div>
-            <div class="col-3">
-                <button v-on:click="store" class="btn btn-primary">Add task</button>
-            </div>
+    <div class="input-group mb-3">
+        <input
+            v-model="task"
+            type="task"
+            class="form-control"
+            placeholder="Add new task"
+            aria-describedby="basic-addon2"
+        >
+        <div class="input-group-append">
+            <button v-on:click="store" class="btn btn-primary" type="button">Add Task</button>
         </div>
     </div>
 </template>
