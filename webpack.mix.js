@@ -17,11 +17,21 @@ mix.browserSync({
 });
 
 mix.styles([
-    'resources/assets/app/css/font-awesome.css',
-    'resources/assets/app/css/ionicons.css',
-    'resources/assets/app/css/flag-icon.min.css',
-    'resources/assets/app/css/slim.css',
-    'resources/assets/app/css/custom.css',
+    'resources/assets/app/css/animate.css',
+    'resources/assets/app/css/bootstrap.min.css',
+    'resources/assets/app/css/dropify.min.css',
+    'resources/assets/app/css/flag-icons.min.css',
+    'resources/assets/app/css/font-awesome.min.css',
+    'resources/assets/app/css/jquery.toast.css',
+    'resources/assets/app/css/linea.css',
+    'resources/assets/app/css/material.css',
+    'resources/assets/app/css/materialdesignicons.min.css',
+    'resources/assets/app/css/simple-line-icons.css',
+    'resources/assets/app/css/spinners.css',
+    'resources/assets/app/css/style.css',
+    'resources/assets/app/css/sweetalert.css',
+    'resources/assets/app/css/themify-icons.css',
+    'resources/assets/app/css/weather-icons.min.css',
     ], 
     'public/css/app.css');
 
