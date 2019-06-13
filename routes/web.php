@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function(){
+    return redirect('/app/home/');
 });
+
+Route::get('/app/{any}', 'Web\App\AppController@index')->where('any', '.*');

@@ -16,5 +16,22 @@ mix.browserSync({
     proxy:'http://laravel-vue-todo.local'
 });
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+mix.styles([
+    'resources/assets/app/css/font-awesome.css',
+    'resources/assets/app/css/ionicons.css',
+    'resources/assets/app/css/flag-icon.min.css',
+    'resources/assets/app/css/slim.css',
+    'resources/assets/app/css/custom.css',
+    ], 
+    'public/css/app.css');
+
+mix.autoload({
+    jquery: ['$', 'window.jQuery',"jQuery", "window.$", "jquery", "window.jquery"],
+    'popper.js/dist/umd/popper.js': ['Popper']
+}).js([
+    'resources/assets/app/js/bootstrap.js',
+    'resources/assets/app/js/jquery.cookie.js',
+    'resources/assets/app/js/slim.js',
+    'resources/client/app/app.js',
+    ], 
+    'public/js/app.js');
