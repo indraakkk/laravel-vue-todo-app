@@ -13,7 +13,7 @@ const mix = require('laravel-mix');
 
 // Browsersync Reloading
 mix.browserSync({
-    proxy:'http://laravel-vue-todo.local'
+    proxy: process.env.MIX_DEV_URL
 });
 
 mix.styles([
