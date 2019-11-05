@@ -10,7 +10,7 @@ use App\Http\Resources\App as AppResource;
 
 class AppController extends Controller
 {
-    //
+    // render app view
     public function index(){
         return view('app');
     }
